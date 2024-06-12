@@ -9,11 +9,11 @@
 <p class="align">ahahab ajajaja ajaja x xhdhd djd  snsnwh hsbs  aaajjs drurucc ggvm bxhxuzoeog </p>
 </div>
 
-<% if (locals.days) { %>
-    <% for(let i=1;i<= days.length;i++) {%>
+<% if (locals.posts) { %>
+    <% for(let i=1;i<= posts.length;i++) {%>
         <div >
-        <h1 class="align">Day <%=i%></h1>
-        <p class="align inline"><%=days[i-1].substring(0, 50)%> </p>
+        <h1 class="align"><%=posts[i-1].title%></h1>
+        <p class="align inline"><%=posts[i-1].content.substring(0, 50)%> </p>
         <a class=" inline" href="">... Read More</a>
         </div>
     <% } %>
