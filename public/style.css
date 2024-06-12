@@ -7,7 +7,7 @@
 }
 
 .container{
-    
+    /* width: min-content; */
     height: min-content;
     margin: 0px auto;
     text-align: left;
@@ -16,6 +16,7 @@
     gap: 1.3rem;
     justify-content: space-evenly;
     flex-direction: column;
+    
 }
 
 .align{
@@ -65,5 +66,29 @@ li a{
 .inline{
     display: inline-block;
     text-decoration: none;
+}
+
+button{
+    width: 10%;
+    height: min-content;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid;
+    background-color: black;
+    color: white;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 1rem;
+    margin-right: 20%;
+    font-size: larger;
+}
+
+.input-text{
+    padding: 5px ;
+    font-size: 1rem;
 }
 
