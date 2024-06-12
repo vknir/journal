@@ -1,0 +1,21 @@
+
+<head>
+    <link rel="stylesheet" href="style.css">
+</head>
+<%- include('header.ejs'); -%>
+<div class="container">
+<div>
+<h1 class="align">Home</h1>
+<p class="align">ahahab ajajaja ajaja x xhdhd djd  snsnwh hsbs  aaajjs drurucc ggvm bxhxuzoeog </p>
+</div>
+
+<% if (locals.days) { %>
+    <% for(let i=1;i<= days.length;i++) {%>
+        <div >
+        <h1 class="align">Day <%=i%></h1>
+        <p class="align inline"><%=days[i-1].substring(0, 50)%> </p>
+        <a class=" inline" href="">... Read More</a>
+        </div>
+    <% } %>
+<% } %>
+</div>
