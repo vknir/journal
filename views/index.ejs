@@ -6,7 +6,8 @@
 <div class="container">
 <div>
 <h1 class="align">Home</h1>
-<p class="align">ahahab ajajaja ajaja x xhdhd djd  snsnwh hsbs  aaajjs drurucc ggvm bxhxuzoeog </p>
+<p class="align">Welcome to my bloging website JOURNAL. </p>
+<p class="align">You can create posts by clicking 'Create', and view them in expanded form by clicking 'Read More'.</p>
 </div>
 
 <% if (locals.posts) { %>
@@ -14,7 +15,7 @@
         <div >
         <h1 class="align"><%=posts[i-1].title%></h1>
         <p class="align inline"><%=posts[i-1].content.substring(0, 50)%> </p>
-        <a class=" inline" href="">... Read More</a>
+        <a class=" inline" href="/posts/<%= posts[i-1]._id%>">... Read More</a>
         </div>
     <% } %>
 <% } %>

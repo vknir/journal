@@ -10,11 +10,9 @@ app.use(bodyParser.urlencoded({extended : true}))
 app.use(express.static('public'))
 
 
-const days=["Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-    "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old"
-]
 
-mongoose.connect('mongodb://127.0.0.1:27017/blogDB')
+
+mongoose.connect('mongodb+srv://2005975:1meJSbinEWln11wm@cluster0.sfxroxp.mongodb.net/blogDB')
 const postSchema = new mongoose.Schema({
     title :{
         type: String,
@@ -40,6 +38,23 @@ app.get("/",async(req,res)=>{
 app.get("/compose", async (req, res)=>{
     res.render("compose.ejs");
 })
+
+app.get("/posts/:_id", async(req, res)=>{
+    const id= (req.params._id)
+    const result = await postModel.findById(id);
+    console.log(result)
+})
+
+
+app.post("/compose",async(req, res)=>{
+    // console.log(req.body)
+    await postModel.create( {
+        title : `${req.body.title}`,
+        content : `${req.body.content}`
+    })
+    res.redirect("/")
+})
+
 
 
 app.listen(port, ()=>{
